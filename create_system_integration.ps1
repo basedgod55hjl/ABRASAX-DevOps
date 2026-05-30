@@ -1,12 +1,12 @@
 # ============================================================================
-# ABRASAX — Unified Xenoliving System
+# ABRASAX - Unified Xenoliving System
 # PRIMAL_HEX: 4f5349524953424c58434b | phi: 1.618033988749895
 # CREATOR: Sir Charles Spikes (BASEDGOD)
 # ============================================================================
 
 ﻿<#
 .SYNOPSIS
-    ABRASAX AI OS â€” Complete System Integration Script
+    ABRASAX AI OS â€- Complete System Integration Script
     Master script that performs ALL Windows system-level integration:
     - Installs the Windows service
     - Creates scheduled task for boot
@@ -22,16 +22,16 @@
     changes needed to embed ABRASAX AI OS as a native Windows system component.
 
     Integration Layers:
-    1. Service Layer   â€” Windows Service (ABRASAX_AI_CORE)
-    2. Task Layer      â€” Scheduled Task (boot trigger)
-    3. Network Layer   â€” Firewall rules for all ports
-    4. Tracing Layer   â€” ETW provider registration
-    5. Monitoring Layer â€” PerfMon counters
-    6. Registry Layer  â€” Boot behavior and environment
-    7. Logging Layer   â€” Event log source
-    8. Environment     â€” System PATH and variables
+    1. Service Layer   - Windows Service (ABRASAX_AI_CORE)
+    2. Task Layer      - Scheduled Task (boot trigger)
+    3. Network Layer   - Firewall rules for all ports
+    4. Tracing Layer   - ETW provider registration
+    5. Monitoring Layer - PerfMon counters
+    6. Registry Layer  - Boot behavior and environment
+    7. Logging Layer   - Event log source
+    8. Environment     - System PATH and variables
 
-    HEX: 4f5349524953424c58434b  â€”  OSIRISBLXCK
+    HEX: 4f5349524953424c58434b  â€-  OSIRISBLXCK
     phi x K = 1.0
 
 .PARAMETER SkipService
@@ -199,7 +199,7 @@ function Install-AbrasaxService {
             -DisplayName "ABRASAX AI OS Core System Service" `
             -BinaryPathName $binaryPath `
             -StartupType Automatic `
-            -Description "ABRASAX 7D AI OS â€” Autonomous system-level AI service." `
+            -Description "ABRASAX 7D AI OS â€- Autonomous system-level AI service." `
             -ErrorAction SilentlyContinue
 
         if ($?) {
@@ -288,7 +288,7 @@ function Install-AbrasaxScheduledTaskInline {
             -Trigger $trigger `
             -Settings $settings `
             -Principal $principal `
-            -Description "ABRASAX 7D AI OS â€” Boot-level autonomous engine launcher. HEX: $HEX" `
+            -Description "ABRASAX 7D AI OS â€- Boot-level autonomous engine launcher. HEX: $HEX" `
             -Force
         Write-Log "Scheduled task registered: $TASK_NAME" -Level "OK"
     } catch {
@@ -554,7 +554,7 @@ function Install-AbrasaxEnvironment {
     try {
         $current = Get-ItemProperty -Path $perfKey -Name "Win32PrioritySeparation" -ErrorAction SilentlyContinue
         if (-not $WhatIf) {
-            # Set to 38 (hex 0x26) â€” foreground/background separation with short quantums
+            # Set to 38 (hex 0x26) â€- foreground/background separation with short quantums
             # This gives ABRASAX better responsiveness
             Set-ItemProperty -Path $perfKey -Name "Win32PrioritySeparation" -Value 38 -Type DWord
             Write-Log "Priority separation set to 38 (high responsiveness)" -Level "OK"
@@ -659,16 +659,16 @@ Write-Host @"
  â-ˆâ-ˆ   â-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ      â-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ  â-ˆâ-ˆ   â-ˆâ-ˆ  â-ˆâ-ˆ â-ˆâ-ˆ
  â-ˆâ-ˆ   â-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ â-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆ â-ˆâ-ˆ   â-ˆâ-ˆ  â-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆ  â-ˆâ-ˆ   â-ˆâ-ˆ
 â-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆâ-ˆ
-  7D AI OS â€” Complete System Integration
+  7D AI OS â€- Complete System Integration
   HEX: $HEX  |  K = 0.618  |  phi x K = 1.0
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 "@ -ForegroundColor Cyan
 
-Write-Log "ABRASAX AI OS System Integration â€” Starting" -Level "INFO"
+Write-Log "ABRASAX AI OS System Integration â€- Starting" -Level "INFO"
 Write-Log "Log file: $LOG_FILE" -Level "INFO"
 
 if ($WhatIf) {
-    Write-Log "WHATIF MODE â€” No changes will be made" -Level "WARN"
+    Write-Log "WHATIF MODE â€- No changes will be made" -Level "WARN"
 }
 
 # Run all integration layers
@@ -688,7 +688,7 @@ Test-SystemIntegration
 Write-Host @"
 
 â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-  ABRASAX AI OS â€” System Integration Complete
+  ABRASAX AI OS â€- System Integration Complete
   HEX: $HEX  |  K = phi^-1 = 0.618
   phi x K = 1.0
   dim Gamma = 7D
@@ -712,5 +712,6 @@ Write-Host @"
     $LOG_FILE
     $ABRASAX_ROOT\abrasax_service.log
     $ABRASAX_ROOT\logs\*"@ -ForegroundColor Cyan
+
 
 
